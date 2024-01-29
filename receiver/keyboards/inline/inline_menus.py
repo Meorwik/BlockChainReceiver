@@ -1,5 +1,4 @@
 from .callbacks import ActionCallback, RedirectCallback
-from ...utils.redirect_model import Redirect
 from .inline_base import FacadeKeyboard
 from typing import Final, List, Dict
 
