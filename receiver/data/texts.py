@@ -48,6 +48,14 @@ ASK_CONFIRMATION_FOR_ADDING_NEW_REDIRECT: Final[str] = """
 Вы уверены что хотите создать это перенаправление ?
 """
 
+ASK_CONFIRMATION_FOR_EDITING_REDIRECT: Final[str] = """
+Вы уверены что хотите изменить это перенаправление ?
+"""
+
+ASK_CONFIRMATION_FOR_COPY_HISTORY: Final[str] = """
+Вы уверены что хотите скопировать историю чата ?
+"""
+
 EMPTY_REDIRECTS_LIST_CASE: Final[str] = """
 Перенаправления пока отсутсвуют...
 """

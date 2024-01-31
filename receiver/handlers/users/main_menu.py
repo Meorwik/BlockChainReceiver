@@ -146,10 +146,24 @@ async def handle_passing_redirect_copy_to_data(message: Message, state: FSMConte
         action = state_data["action"]
         await state.set_data(state_data)
 
-        if action == "create_new_redirect" or action == "edit_redirect" or action == "copy_chat_history":
+        if action == "create_new_redirect":
             await state.set_state(RequestForConfirmation.get_confirmation)
             await message.answer(
                 text=texts.ASK_CONFIRMATION_FOR_ADDING_NEW_REDIRECT,
+                reply_markup=ConfirmationKeyboardBuilder().get_keyboard()
+            )
+
+        elif action == "edit_redirect":
+            await state.set_state(RequestForConfirmation.get_confirmation)
+            await message.answer(
+                text=texts.ASK_CONFIRMATION_FOR_EDITING_REDIRECT,
+                reply_markup=ConfirmationKeyboardBuilder().get_keyboard()
+            )
+
+        elif action == "copy_chat_history":
+            await state.set_state(RequestForConfirmation.get_confirmation)
+            await message.answer(
+                text=texts.ASK_CONFIRMATION_FOR_COPY_HISTORY,
                 reply_markup=ConfirmationKeyboardBuilder().get_keyboard()
             )
 
