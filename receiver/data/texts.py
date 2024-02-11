@@ -59,3 +59,7 @@ ASK_CONFIRMATION_FOR_COPY_HISTORY: Final[str] = """
 EMPTY_REDIRECTS_LIST_CASE: Final[str] = """
 Перенаправления пока отсутсвуют...
 """
+
+OPERATION_IN_PROCESS_TEXT: Final[str] = """
+Операция в процессе выполнения, это может занять некоторое время...
+"""

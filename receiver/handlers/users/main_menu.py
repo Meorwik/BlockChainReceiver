@@ -174,6 +174,7 @@ async def handle_passing_redirect_copy_to_data(message: Message, state: FSMConte
 @main_menu.callback_query(StateFilter(RequestForConfirmation.get_confirmation))
 async def handle_getting_confirmation(call: CallbackQuery, state: FSMContext):
     if call.data == "ConfirmationStatus - YES":
+        await call.message.edit_text(texts.OPERATION_IN_PROCESS_TEXT)
         state_data = await state.get_data()
         action = state_data["action"]
         redirect = state_data["redirect"]

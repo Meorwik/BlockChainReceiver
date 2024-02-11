@@ -10,7 +10,9 @@ class SenderAPIController:
         api_url: str = self.__SERVICE_API_LINK + post_request_link
         return requests.post(api_url).json()
 
-    # --------------------------- CRUD --------------------------------
+    """
+                                CRUD
+    """
 
     def create_redirect(self, copy_from: Union[int, str], copy_to: Union[int, str]) -> Dict:
         post_request_link: str = f"/add_redirect/{copy_from}_{copy_to}"
@@ -32,11 +34,11 @@ class SenderAPIController:
         post_request_link: str = f"/remove_all_redirects"
         return self._execute_api_post_request(post_request_link)
 
-    # --------------------------- EXTRA --------------------------------
+    """
+                                EXTRA
+    """
 
     def copy_history(self, copy_from: Union[int, str], copy_to: Union[int, str]) -> Dict:
-        print(copy_from)
-        print(copy_to)
         post_request_link: str = f"/copy_history/{copy_from}_{copy_to}"
         return self._execute_api_post_request(post_request_link)
 
